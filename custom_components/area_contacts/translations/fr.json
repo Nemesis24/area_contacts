@@ -1,0 +1,36 @@
+{
+  "config": {
+    "flow_title": "Contacteurs d'Area", 
+    "step": {
+      "user": {
+        "title": "Configuration Area Contacts",
+        "description": "Sélectionnez les contacteurs à exclure pour chaque pièce",
+        "data": {
+          "area_*": "Contacteurs à exclure de {}"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Une seule instance est autorisée."
+    }
+  },
+  "state_attributes": {
+    "count": "Nombre de contacteurs ouverts",
+    "total": "Nombre total de contacteurs",
+    "count_of": "Nombre de contacteurs ouverts sur le total",
+    "contacts_open": "Contacteurs ouverts",
+    "contacts_closed": "Contacteurs fermés",
+    "excluded_contacts": "Contacteurs exclus"
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configuration Area Contacts",
+        "description": "Modifiez les contacteurs à exclure pour chaque pièce",
+        "data": {
+          "area_*": "Contacteurs à exclure de {}"
+        }
+      }
+    }
+  }
+}
