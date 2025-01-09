@@ -36,7 +36,7 @@ Non supporté.
 
 ### Capteurs
 
-L'intégration crée des capteurs pour chaque zone avec les attributs suivants :
+L'intégration crée des capteurs pour chaque zone et un pour toute la maison avec les attributs suivants :
 
 - `count`: Nombre de contacteurs ouverts.
 - `total`: Nombre total de contacteurs.

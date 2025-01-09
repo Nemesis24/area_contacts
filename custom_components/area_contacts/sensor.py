@@ -50,6 +50,13 @@ async def async_setup_entry(hass, entry, async_add_entities):
             _LOGGER.debug(f"Area {area.name}: {len(area_contacts)} contacts found: {area_contacts}")
             sensors.append(RoomContactsSensor(area.name, list(area_contacts), list(area_excluded)))
             all_contacts.update(area_contacts)
+        else:
+            # Supprimer l'entité de commutateur si la pièce n'a plus de capteurs contact
+            sensor_contact_entity_id = f"sensor.contacts_{area.name.lower().replace(' ', '_')}"
+            entity = entity_reg.async_get(sensor_contact_entity_id)
+            if entity:
+                _LOGGER.debug(f"Removing switch entity for area with no contact sensors: {sensor_contact_entity_id}")
+                entity_reg.async_remove(sensor_contact_entity_id)
 
     if all_contacts:
         _LOGGER.debug(f"Total contacts found: {len(all_contacts)}")

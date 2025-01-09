@@ -1,0 +1,36 @@
+{
+  "config": {
+    "flow_title": "Area Contacts",
+    "step": {
+      "user": {
+        "title": "Area Contacts Configuration",
+        "description": "You can exclude contacts for each room by selecting them.\n\nThe integration only detects contacts that are assigned to a room.",
+        "data": {
+          "area_*": "Contacts to exclude from {}"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only a single instance is allowed."
+    }
+  },
+  "state_attributes": {
+    "count": "Number of open contacts",
+    "total": "Total number of contacts",
+    "count_of": "Number of open contacts out of total",
+    "contacts_open": "Open contacts",
+    "contacts_closed": "Closed contacts",
+    "excluded_contacts": "Excluded contacts"
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Area Contacts Configuration",
+        "description": "You can exclude contacts for each room by selecting them.\n\nThe integration only detects contacts that are assigned to a room.",
+        "data": {
+          "area_*": "Contacts to exclude from {}"
+        }
+      }
+    }
+  }
+}
