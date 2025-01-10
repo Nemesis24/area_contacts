@@ -3,6 +3,7 @@ from homeassistant.components.sensor import SensorEntity
 from homeassistant.const import STATE_ON, STATE_OFF
 from homeassistant.core import callback
 from homeassistant.helpers import entity_registry, area_registry, device_registry
+from homeassistant.helpers.event import async_track_state_change
 from .const import DOMAIN, ATTR_COUNT, ATTR_TOTAL
 
 _LOGGER = logging.getLogger(__name__)
@@ -105,10 +106,10 @@ class RoomContactsSensor(SensorEntity):
 
         for contact in self._contacts:
             self.async_on_remove(
-                self.hass.helpers.event.async_track_state_change(
+                self.hass.helpers.event.async_track_state_change_event(
                     contact, async_state_changed
                 )
-            )
+            )    
         
         self.async_schedule_update_ha_state(True)
 
